@@ -1,5 +1,4 @@
 # LeetCodeInCPP
 
-List
-
-# 1 Two Sum
+# List:
+1 Two Sum
