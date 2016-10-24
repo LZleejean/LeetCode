@@ -6,12 +6,12 @@
 
 ## Detail
 
-###1 Two Sum
+* ### #1 Two Sum
 **LeetCode Link：**
-<https://leetcode.com/problems/two-sum/>
+<br><https://leetcode.com/problems/two-sum/>
 
 **Problem description:**
-Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+<br>Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 You may assume that each input would have exactly one solution.
 
 **Source code:**
