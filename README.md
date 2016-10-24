@@ -47,3 +47,26 @@ public:
     }
 };
 ```
+<br> The O(n) solution(15 ms) from naveed.zafar.
+<br>By using a unordered_map, we can add the value-index link and find the target value.Because the hash find() function is O(1).
+<br>
+```
+vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int,int> hash;
+        vector<int> result;
+        for(int i=0;i<nums.size();++i){
+            //key
+            int valueFind = target - nums[i];
+            //if find it in the map
+            if(hash.find(valueFind)!=hash.end()){
+                result.push_back(hash[valueFind]);
+                result.push_back(i);
+                return result;
+            }
+            //if not find,add link
+            hash[nums[i]]=i;
+        }
+        return result;
+}
+```
+   
