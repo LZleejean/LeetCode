@@ -101,7 +101,7 @@ vector<int> twoSum(vector<int>& nums, int target) {
 <br>Expected:
 <br>[7,0,8,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,1,4,3,9,1]
 
-<br>This problem is not hard and the solution is O(n),the important issue is how short and simple?
+<br>This problem is not hard and the solution is O(n),the important issue is how short and simple.
 <br>
 ```
 /**
@@ -172,7 +172,7 @@ ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
 <br>    The maximum number of consecutive 1s is 3.
 
 **Source code:**
-<br><https://github.com/LZleejean/LeetCode/blob/master/SourceCode/485_Max Consecutive Ones>
+<br><https://github.com/LZleejean/LeetCode/blob/master/SourceCode/485_Max_Consecutive_Ones>
 
 **Ideas:**
 <br>using a iterator traverse the vector.if val is "1",let count plus 1.if val is "0",store the count to a new vector.When it go to end,
