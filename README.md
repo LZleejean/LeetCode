@@ -2,8 +2,9 @@
 
 ## List:
 
-* #1 Two Sum
-* #2 Add Two Numbers
+* #1    Two Sum
+* #2    Add Two Numbers
+* #485  Max Consecutive Ones
 
 ## Detail
 
@@ -157,4 +158,48 @@ ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
     }
     return preHead.next;
 }
+```
+
+###   #485 Max Consecutive Ones
+**LeetCode Link：**
+<br>https://leetcode.com/problems/max-consecutive-ones/#/description
+
+**Problem description:**
+<br>Given a binary array, find the maximum number of consecutive 1s in this array.
+<br>Input: [1,1,0,1,1,1]
+<br>Output: 3
+<br>Explanation: The first two digits or the last three digits are consecutive 1s.
+<br>    The maximum number of consecutive 1s is 3.
+
+**Source code:**
+<br><https://github.com/LZleejean/LeetCode/blob/master/SourceCode/485_Max Consecutive Ones>
+
+**Ideas:**
+<br>using a iterator traverse the vector.if val is "1",let count plus 1.if val is "0",store the count to a new vector.When it go to end,
+<br>i judge the count whether is zero to avoid forgeting to store the last count.Finally,i sort the new vector and return the last value.
+<br>this solution depend on the sort's cost best O(nlogn) worst O(n^2) but average O(nlogn) with 66ms.
+```
+int findMaxConsecutiveOnes(vector<int>& nums) {
+        vector<int>::iterator it;
+        vector<int> count;
+        int item=0;
+        for(it=nums.begin();it!=nums.end();it++)
+        {
+            if(*it==1)
+            {
+                item++;
+            }
+            else
+            {
+                count.push_back(item);
+                item=0;
+            }
+        }
+        if(item!=0)
+        {
+            count.push_back(item);
+        }
+        sort(count.begin(),count.end());
+        return count[count.size()-1];
+    }
 ```
