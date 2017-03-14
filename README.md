@@ -14,6 +14,10 @@
 **Problem description:**
 <br>Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 You may assume that each input would have exactly one solution.
+<br>Ex:
+<br>Given nums = [2, 7, 11, 15], target = 9,
+<br>Because nums[0] + nums[1] = 2 + 7 = 9,
+<br>return [0, 1].
 
 **Source code:**
 <br><https://github.com/LZleejean/LeetCode/blob/master/SourceCode/1_TwoSum>
@@ -77,7 +81,7 @@ vector<int> twoSum(vector<int>& nums, int target) {
 
 **Problem description:**
 <br>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
-
-You may assume the two numbers do not contain any leading zero, except the number 0 itself.
-Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
-Output: 7 -> 0 -> 8
+<br>You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+<br>EX:
+<br>Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+<br>Output: 7 -> 0 -> 8
