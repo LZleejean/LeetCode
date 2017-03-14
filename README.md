@@ -88,7 +88,7 @@ vector<int> twoSum(vector<int>& nums, int target) {
 <br>Output: 7 -> 0 -> 8
 
 **Source code:**
-<br><https://github.com/LZleejean/LeetCode/blob/master/SourceCode/2_Add Two Numbers>
+<br><https://github.com/LZleejean/LeetCode/blob/master/SourceCode/2_AddTwoNumbers>
 
 **Ideas:**
 <br>In my view,i want to get the two numbers of linked list and then add together and finally split the result into a new ListNode.But i forgot the accuracy of number.When it's too long,the way failed.
@@ -172,7 +172,7 @@ ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
 <br>    The maximum number of consecutive 1s is 3.
 
 **Source code:**
-<br><https://github.com/LZleejean/LeetCode/blob/master/SourceCode/485_Max_Consecutive_Ones>
+<br><https://github.com/LZleejean/LeetCode/blob/master/SourceCode/485_MaxConsecutiveOnes>
 
 **Ideas:**
 <br>using a iterator traverse the vector.if val is "1",let count plus 1.if val is "0",store the count to a new vector.When it go to end,
