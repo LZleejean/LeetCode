@@ -85,3 +85,10 @@ vector<int> twoSum(vector<int>& nums, int target) {
 <br>EX:
 <br>Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 <br>Output: 7 -> 0 -> 8
+
+**Source code:**
+<br><https://github.com/LZleejean/LeetCode/blob/master/SourceCode/2_Add Two Numbers>
+
+**Ideas:**
+<br>In my view,i want to get the two numbers of linked list and then add together and finally split the result into a new ListNode.But i forgot the accuracy of number.When it's too long,the way failed.
+<br>
