@@ -203,3 +203,31 @@ int findMaxConsecutiveOnes(vector<int>& nums) {
         return count[count.size()-1];
     }
 ```
+
+<br> When i eat dinner,i thought a good idea.Don't use a new vector.Directly contrast and assign.When the val is '1',plus one and contrast with count.
+<br>This solution just O(n) with 38ms.
+<br>
+```
+int findMaxConsecutiveOnes(vector<int>& nums) {
+        vector<int>::iterator it;
+        int count=0;
+        int item=0;
+        for(it=nums.begin();it!=nums.end();it++)
+        {
+            if(*it==1)
+            {
+                item++;
+                if(item>count)
+                {
+                    count=item;
+                }
+            }
+            else 
+            {
+                item=0;
+            }
+        }
+        return count;
+    }
+```
+
