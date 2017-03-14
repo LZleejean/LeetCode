@@ -91,4 +91,70 @@ vector<int> twoSum(vector<int>& nums, int target) {
 
 **Ideas:**
 <br>In my view,i want to get the two numbers of linked list and then add together and finally split the result into a new ListNode.But i forgot the accuracy of number.When it's too long,the way failed.
+<br>Just ex:
+<br>Input:
+<br>[2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,9]
+<br>[5,6,4,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,2,4,3,9,9,9,9]
+<br>Output:
+<br>[]
+<br>Expected:
+<br>[7,0,8,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,4,8,6,1,4,3,9,1]
+
+<br>This problem is not hard and the solution is O(n),the important issue is how short and simple?
 <br>
+```
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        long number1=0,number2=0;
+        ListNode *ln=new ListNode(0), *l=ln;
+        if(l1->val==0&&!l1->next&&l2->val==0&&!l2->next)
+        {
+            return ln;
+        }
+        for(int i=0;l1!=NULL;l1=l1->next,i++)
+        {
+            number1+=l1->val*pow(10,i);
+        }
+        for(int i=0;l2!=NULL;l2=l2->next,i++)
+        {
+            number2+=l2->val*pow(10,i);
+        }
+        number1+=number2;
+        while(number1!=0)
+        {
+            
+            int value=number1%10;
+            number1/=10;
+            l->next=new ListNode(value);
+            l=l->next;
+        }
+        return ln->next;
+    }
+};
+```
+<br>There is a 11-lines solution from @StefanPochmann.
+<br>His solution use bitewise operations and the code is so concise.
+<br>
+```
+ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
+    ListNode preHead(0), *p = &preHead;
+    int extra = 0;
+    while (l1 || l2 || extra) {
+        if (l1) extra += l1->val, l1 = l1->next;
+        if (l2) extra += l2->val, l2 = l2->next;
+        p->next = new ListNode(extra % 10);
+        extra /= 10;
+        p = p->next;
+    }
+    return preHead.next;
+}
+```
