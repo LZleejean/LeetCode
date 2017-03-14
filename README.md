@@ -166,6 +166,7 @@ ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
 
 **Problem description:**
 <br>Given a binary array, find the maximum number of consecutive 1s in this array.
+<br>EX:
 <br>Input: [1,1,0,1,1,1]
 <br>Output: 3
 <br>Explanation: The first two digits or the last three digits are consecutive 1s.
@@ -231,3 +232,33 @@ int findMaxConsecutiveOnes(vector<int>& nums) {
     }
 ```
 
+<br>Coutrasting my second method with others,what better than me is that "if" statements is concise.
+<br>
+```
+int findMaxConsecutiveOnes(vector<int>& nums) 
+{
+    int max=0,cur=0;
+    for(int i=0;i<nums.size();i++)
+    {
+        if(nums[i]&1)
+        {
+            max=max>++cur?max:cur;
+        }
+        else cur=0;
+    }
+    return max;
+}
+```
+
+<br>OMG, @G513's solution is so simple.By using c++11 "auto" keyword.But with 59ms.O(∩_∩)O.
+<br>
+```
+int findMaxConsecutiveOnes(vector<int>& nums) {
+        int max_cnt = 0, cnt = 0;
+        for (auto n : nums) {
+            if (n == 1) max_cnt = max(++cnt, max_cnt);
+            else cnt = 0;
+        }
+        return max_cnt;
+    }
+```
