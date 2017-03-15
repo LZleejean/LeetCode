@@ -1,0 +1,21 @@
+//My method with O(n)
+
+int findPoisonedDuration(vector<int>& timeSeries, int duration) {
+        vector<int>::iterator it;
+        int count=0;
+        for(it=timeSeries.begin();it!=timeSeries.end();it++)
+        {
+            if(it+1!=timeSeries.end())
+            {
+                if(*(it+1)>=*it+duration)
+                {
+                    count+=duration;
+                }
+                else
+                {
+                    count+=*(it+1)-*it;
+                }
+            }
+        }
+        return count=timeSeries.empty()?count:count+duration;
+    }
