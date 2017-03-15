@@ -282,7 +282,7 @@ int findMaxConsecutiveOnes(vector<int>& nums) {
 
 **Ideas:**
 <br>This problem just like a game,constantly losing blood and update stuts.So my method is that traversing the vector and contrast current value with next to decide if it needs update.
-<br>This solution with O(n) is not hard,but i think the point is how to simple and concise.
+<br>This O(n)'s solution with 79ms is not hard,but i think the point is how to simple and concise.
 <br>
 ```
 int findPoisonedDuration(vector<int>& timeSeries, int duration) {
