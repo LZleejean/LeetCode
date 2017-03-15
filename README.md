@@ -5,6 +5,7 @@
 * #1    Two Sum
 * #2    Add Two Numbers
 * #485  Max Consecutive Ones
+* #495  Teemo Attacking
 
 ## Detail
 
@@ -262,3 +263,46 @@ int findMaxConsecutiveOnes(vector<int>& nums) {
         return max_cnt;
     }
 ```
+
+### #495 Teemo Attacking
+**LeetCode Link：**
+<br>https://leetcode.com/problems/teemo-attacking/#/description
+
+**Problem description:**
+<br>In LLP world, there is a hero called Teemo and his attacking can make his enemy Ashe be in poisoned condition. Now, given the Teemo's attacking ascending time series towards Ashe and the poisoning time duration per Teemo's attacking, you need to output the total time that Ashe is in poisoned condition.
+<br>You may assume that Teemo attacks at the very beginning of a specific time point, and makes Ashe be in poisoned condition immediately.
+<br>EX:
+<br>Input:[1,4], 2
+<br>Output: 4
+<br>Input:[1,2], 2
+<br>Output: 3
+
+**Source code:**
+<br><https://github.com/LZleejean/LeetCode/blob/master/SourceCode/495_TeemoAttacking>
+
+**Ideas:**
+<br>This problem just like a game,constantly losing blood and update stuts.So my method is that traversing the vector and contrast current value with next to decide if it needs update.
+<br>This solution with O(n) is not hard,but i think the point is how to simple and concise.
+<br>
+```
+int findPoisonedDuration(vector<int>& timeSeries, int duration) {
+        vector<int>::iterator it;
+        int count=0;
+        for(it=timeSeries.begin();it!=timeSeries.end();it++)
+        {
+            if(it+1!=timeSeries.end())
+            {
+                if(*(it+1)>=*it+duration)
+                {
+                    count+=duration;
+                }
+                else
+                {
+                    count+=*(it+1)-*it;
+                }
+            }
+        }
+        return count=timeSeries.empty()?count:count+duration;
+    }
+```
+
