@@ -306,3 +306,19 @@ int findPoisonedDuration(vector<int>& timeSeries, int duration) {
     }
 ```
 
+<br>There is two solution different from me.more and more simple.
+<br>@hl1250 use a value "poisonEnd" to store the last attacking casusing poison time.first he or she get the last time and then when it go to a new attacking,he get the previous time by new total time not duration minus old "poisonEnd".
+<br>
+```
+int findPosisonedDuration(vector<int>& timeSeries, int duration)
+{
+    int poisonEnd = 0,total=0;
+    for(auto it : timeSeries)
+    {
+        poisonEnd = max(it, poisonEnd);
+        total += (it + duration - poisonEnd);
+        poisonEnd = it +  duration;
+    }
+    return total;
+}
+```
