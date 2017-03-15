@@ -19,3 +19,14 @@ int findPoisonedDuration(vector<int>& timeSeries, int duration) {
         }
         return count=timeSeries.empty()?count:count+duration;
     }
+
+//@kevin36's method
+
+int findPosisonedDuration(vector<int>& ts, int duration) {
+        int tp = 0, pe = 0;
+        for(int i=0; i<ts.size(); ++i){
+            tp += duration - (ts[i] < pe) *(pe - ts[i]);
+            pe = ts[i] + duration;
+        }
+        return tp;
+    }
