@@ -250,6 +250,12 @@ int findMaxConsecutiveOnes(vector<int>& nums)
     return max;
 }
 ```
+<br>more concise.it's better.
+```
+if(nums[i]==1) max=max>++cur?max:cur;
+else cur=0;
+```
+
 
 <br>OMG, @G513's solution is so simple.By using c++11 "auto" keyword.But with 59ms.O(∩_∩)O.
 <br>
