@@ -322,3 +322,16 @@ int findPosisonedDuration(vector<int>& timeSeries, int duration)
     return total;
 }
 ```
+<br>@ kevin36's solution is similar but he or she use duration minus old not total time.this point is similar with mine.
+<br>
+```
+int findPosisonedDuration(vector<int>& ts, int duration) {
+        int tp = 0, pe = 0;
+        for(int i=0; i<ts.size(); ++i){
+            tp += duration - (ts[i] < pe) *(pe - ts[i]);
+            pe = ts[i] + duration;
+        }
+        return tp;
+    }
+```
+<br> In my view,i think the second is better than me and the first.
