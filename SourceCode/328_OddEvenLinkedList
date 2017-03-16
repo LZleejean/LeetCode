@@ -1,0 +1,35 @@
+//My method
+ListNode* oddEvenList(ListNode* head) {
+        ListNode *oldOdd,*even,*newHead=NULL,*two;
+        int i=1;
+        while(head)
+        {
+            if(i%2==1)
+            {
+                if(i==1)
+                {
+                    oldOdd=head;
+                    i++;
+                    newHead=oldOdd;
+                    head=head->next;
+                }
+                else
+                {
+                    oldOdd->next=head;
+                    oldOdd=head;
+                    even->next=head->next;
+                    head->next=two;
+                    i++;
+                    head=even->next;
+                }
+            }
+            else
+            {
+                if(i==2) two=head;
+                even=head;
+                i++;
+                head=head->next;
+            }
+        }
+        return newHead;
+    }
