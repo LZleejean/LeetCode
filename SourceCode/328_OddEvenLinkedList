@@ -1,5 +1,6 @@
 //My method
 ListNode* oddEvenList(ListNode* head) {
+        //oldOdd store previous odd;even store the even series of end;two store the second that the even series of begin
         ListNode *oldOdd,*even,*newHead=NULL,*two;
         int i=1;
         while(head)
