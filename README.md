@@ -6,6 +6,7 @@
 * #2    Add Two Numbers
 * #485  Max Consecutive Ones
 * #495  Teemo Attacking
+* #328  Odd Even Linked List
 
 ## Detail
 
